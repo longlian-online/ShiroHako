@@ -1,34 +1,44 @@
-# 白箱（shirohako）
+# 白箱 ShiroHako
 
-白箱项目 monorepo。仓库本身不承载业务代码，通过 Git submodule 聚合前端与后端两个子仓库。
+白箱是一个面向汉化组/字幕组的在线协作平台，帮助翻译团队把一部作品的汉化流程搬上系统：从企划立项、项目分工，到任务认领、提交与审校，全流程在线完成，不再依赖表格、群聊接龙和口头催活。
+
+## 项目背景
+
+团队协作中最常见的问题是流程不透明：任务散落在群消息里，进度靠追问，交接靠记忆。白箱把这些搬到线上——每个作品是一个企划，企划内按章节、模块拆分为项目，项目绑定工作流模板后自动生成任务流，组员只需看自己的待办、领任务、交任务，负责人则能随时掌握整体进度。
+
+## 它能做什么
+
+- **企划管理**：以作品为单位的企划卡，包含封面、简介、标签与状态（进行中 / 已完成 / 已归档），支持创建、编辑与归档。
+- **项目与工作流**：企划内创建项目，绑定工作流模板后生成项目自己的任务流，按阶段推进，各阶段支持并行步骤。
+- **任务协作**：组员浏览企划、认领已解锁的任务、提交成果或放弃任务；负责人可以打回不合格的提交。
+- **成员与组织**：多组织支持，每位成员在所属组织中切换；组织管理员管理成员、入组申请与企划类型。
+- **进度可视化**：企划详情页展示整体进度、待提交与待接取任务数，参与情况一目了然。
+
+## 谁在用
+
+汉化组、字幕组及任何按"作品 → 项目 → 任务"推进流程的创作团队。无论你是想找活干的组员，还是统筹全局的负责人，都能在白箱里找到自己的工作台。
 
 ## 仓库结构
 
-| 目录 | 说明 | 仓库 | 跟踪分支 |
-|---|---|---|---|
-| `shirohako-frontend` | 白箱前端 | `git@github.com:longlian-online/shirohako-frontend` | `main` |
-| `shirohako-backend` | 白箱后端 | `git@github.com:longlian-online/shirohako-backend` | `main` |
+本仓库是 monorepo，通过 Git submodule 聚合前后端两个子仓库：
 
-## 使用
+| 目录 | 说明 | 仓库 |
+|---|---|---|
+| `shirohako-frontend` | 白箱前端 | `git@github.com:longlian-online/shirohako-frontend` |
+| `shirohako-backend` | 白箱后端 | `git@github.com:longlian-online/shirohako-backend` |
 
-### 首次克隆
+首次克隆：
 
 ```bash
 git clone --recurse-submodules git@github.com:longlian-online/ShiroHako.git
 ```
 
-已克隆但缺少子模块时补拉：
+已克隆但缺少子模块时：
 
 ```bash
 git submodule update --init --recursive
 ```
 
-### 日常操作
+## 状态
 
-- 拉取全部最新代码：`git submodule update --remote --merge`
-- 子仓库内正常切分支、提交、推送（各自独立仓库，跟踪各自 `main`）
-- 在本仓库提交一次 submodule 指针变更，即可锁定子仓库版本
-
-### 参考约定
-
-结构与 `longlian-oa-dev` 保持一致：monorepo 仓库 + `*-frontend` / `*-backend` 两个 submodule，均跟踪 `main` 分支。
+项目正在建设中，前端与后端仓库陆续开放。欢迎加入，一起把白箱做成汉化团队用得最顺手的协作工具。

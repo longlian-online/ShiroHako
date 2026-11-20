@@ -14,7 +14,7 @@
 ### 首次克隆
 
 ```bash
-git clone --recurse-submodules git@github.com:longlian-online/shirohako.git
+git clone --recurse-submodules git@github.com:longlian-online/ShiroHako.git
 ```
 
 已克隆但缺少子模块时补拉：

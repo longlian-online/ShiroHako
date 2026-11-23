@@ -24,8 +24,8 @@
 
 | 目录 | 说明 | 仓库 |
 |---|---|---|
-| `shirohako-frontend` | 白箱前端 | `git@github.com:longlian-online/shirohako-frontend` |
-| `shirohako-backend` | 白箱后端 | `git@github.com:longlian-online/shirohako-backend` |
+| `shirohako-frontend` | 白箱前端 | `git@github.com:longlian-online/longlian-oa-frontend`（跟踪 `main`） |
+| `shirohako-backend` | 白箱后端 | `git@github.com:longlian-online/longlian-oa-backend`（跟踪 `main`） |
 
 首次克隆：
 
@@ -39,6 +39,12 @@ git clone --recurse-submodules git@github.com:longlian-online/ShiroHako.git
 git submodule update --init --recursive
 ```
 
+同步子仓库到各自 `main` 最新：
+
+```bash
+git submodule update --remote
+```
+
 ## 状态
 
-项目正在建设中，前端与后端仓库陆续开放。欢迎加入，一起把白箱做成汉化团队用得最顺手的协作工具。
+前端与后端代码已就绪，仓库持续开发中。欢迎加入，一起把白箱做成汉化团队用得最顺手的协作工具。

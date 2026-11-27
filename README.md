@@ -126,7 +126,6 @@ flowchart TB
     API --> DB[("MariaDB 10.11")]
     API --> Cache[("Redis")]
     API --> Storage[("本地存储 / 对象存储 & CDN")]
-    API -. "OTLP / HTTP" .-> Logs[("VictoriaLogs")]
 ```
 
 | 端 | 类别 | 核心技术 |
@@ -137,7 +136,7 @@ flowchart TB
 | **后端** | 框架与语言 | Java 21、Spring Boot 3.5、Spring Security + JWT |
 | | 数据与缓存 | MariaDB 10.11、MyBatis-Plus 3.5、Redis / Redisson、Atlas 迁移 |
 | | 接口文档 | Springdoc OpenAPI |
-| **运维** | 部署与观测 | Docker Compose、Kubernetes（Kustomize）、OpenTelemetry + VictoriaLogs |
+| **运维** | 容器与编排 | Docker Compose、Kubernetes（Kustomize） |
 
 ## 仓库结构
 
@@ -192,7 +191,7 @@ cp app/src/main/resources/application.yml.example app/src/main/resources/applica
 ./mvnw spring-boot:run -pl app
 ```
 
-完整开发环境配置、本地日志采集与代码生成说明见后端 [docs/dev.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/docs/dev.md)。
+完整开发环境配置与代码生成说明见后端 [docs/dev.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/docs/dev.md)。
 
 ### 2. 启动前端服务
 
@@ -208,8 +207,8 @@ vp dev
 
 白箱支持单组织独立运行，也支持多组织平台化部署：
 
-- **后端（Docker Compose）**：适合单机自托管，包含 Atlas 自动迁移、后端服务与 VictoriaLogs 日志采集（复用外部 MariaDB 与 Redis）。配置示例见 [devops/docker-compose.prod.yml](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/docker-compose.prod.yml) 与 [devops/application-prod.yml.example](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/application-prod.yml.example)。
-- **后端（Kubernetes / Kustomize）**：提供开箱即用的全量集群清单（MariaDB、Redis、VictoriaLogs、迁移 Job、后端与 Ingress）及配置分离方案，详见 [devops/k8s/README.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/k8s/README.md)。
+- **后端（Docker Compose）**：适合单机自托管，包含 Atlas 自动迁移与后端服务（复用外部 MariaDB 与 Redis，日志与监控组件可按需对接自有方案）。配置示例见 [devops/docker-compose.prod.yml](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/docker-compose.prod.yml) 与 [devops/application-prod.yml.example](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/application-prod.yml.example)。
+- **后端（Kubernetes / Kustomize）**：提供开箱即用的集群清单（MariaDB、Redis、迁移 Job、后端与 Ingress）及配置分离方案，详见 [devops/k8s/README.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/k8s/README.md)。
 - **前端（静态站点）**：在 `shirohako-frontend` 目录执行 `vp build` 构建静态产物，部署至任意静态托管服务或 Nginx / CDN 即可。
 
 ## 参与贡献

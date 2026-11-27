@@ -22,8 +22,7 @@
   <a href="#功能特性">功能特性</a> ·
   <a href="#界面预览">界面预览</a> ·
   <a href="#技术架构">技术架构</a> ·
-  <a href="#快速开始">快速开始</a> ·
-  <a href="#自托管部署">自托管部署</a> ·
+  <a href="#仓库结构">仓库结构</a> ·
   <a href="#参与贡献">参与贡献</a>
 </p>
 
@@ -169,47 +168,7 @@ git submodule update --init --recursive
 git submodule update --remote
 ```
 
-## 快速开始
-
-### 前置依赖
-
-- **后端一键容器开发**：Docker（含 Docker Compose）、[Task](https://taskfile.dev/)（可选，也可直接执行对应 `docker compose` 命令）
-- **后端本机直接运行**：JDK 21、MariaDB 10.11、Redis
-- **前端开发**：Node.js、pnpm 10+、[Vite Plus (`vp`)](https://viteplus.dev/)
-
-### 1. 启动后端服务
-
-```bash
-cd shirohako-backend
-
-# 方式 A：使用 Docker Compose 一键启动（MariaDB + Redis + 迁移 + 种子数据 + 后端）
-task dev
-
-# 方式 B：本机直接运行（需自行准备 MariaDB 与 Redis）
-cp app/src/main/resources/application.yml.example app/src/main/resources/application.yml
-# 按本机环境编辑 application.yml 后启动：
-./mvnw spring-boot:run -pl app
-```
-
-完整开发环境配置与代码生成说明见后端 [docs/dev.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/docs/dev.md)。
-
-### 2. 启动前端服务
-
-```bash
-cd shirohako-frontend
-pnpm install
-vp dev
-```
-
-启动后访问 `http://localhost:5173`。提交前可运行 `vp check` 一次性完成格式化、lint 与类型检查。更多说明见前端 [README.md](https://github.com/longlian-online/longlian-oa-frontend/blob/main/README.md)。
-
-## 自托管部署
-
-白箱支持单组织独立运行，也支持多组织平台化部署：
-
-- **后端（Docker Compose）**：适合单机自托管，包含 Atlas 自动迁移与后端服务（复用外部 MariaDB 与 Redis，日志与监控组件可按需对接自有方案）。配置示例见 [devops/docker-compose.prod.yml](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/docker-compose.prod.yml) 与 [devops/application-prod.yml.example](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/application-prod.yml.example)。
-- **后端（Kubernetes / Kustomize）**：提供开箱即用的集群清单（MariaDB、Redis、迁移 Job、后端与 Ingress）及配置分离方案，详见 [devops/k8s/README.md](https://github.com/longlian-online/longlian-oa-backend/blob/main/devops/k8s/README.md)。
-- **前端（静态站点）**：在 `shirohako-frontend` 目录执行 `vp build` 构建静态产物，部署至任意静态托管服务或 Nginx / CDN 即可。
+> 前后端的本地运行、构建与部署方式，请分别参考 [前端仓库](https://github.com/longlian-online/longlian-oa-frontend) 与 [后端仓库](https://github.com/longlian-online/longlian-oa-backend) 各自的文档说明。
 
 ## 参与贡献
 

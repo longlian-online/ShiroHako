@@ -24,9 +24,7 @@
 
 1. Fork 目标仓库并从 `main` 拉出新分支（例如 `feat/xxx`、`fix/xxx`、`docs/xxx`）。
 2. 保持改动聚焦，一个 PR 尽量只解决一个明确的问题。
-3. 提交前请运行对应仓库的检查与测试：
-   - **前端**（`shirohako-frontend`）：使用 `vp check` 完成格式、lint 和类型检查。
-   - **后端**（`shirohako-backend`）：参考 [后端开发说明](https://github.com/longlian-online/longlian-oa-backend/blob/main/docs/dev.md) 与 `task test-docker` 运行单元测试和 API 测试。
+3. 提交前请按照对应子仓库自身的开发文档完成本地运行、代码检查与测试。
 4. 发起 PR 时说明改动动机、核心变更以及验证方式；若涉及界面调整，建议附上前后截图。
 
 ### Commit 规范

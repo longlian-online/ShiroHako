@@ -82,9 +82,8 @@ flowchart LR
 - **多组织与权限体系**
   - 原生支持多组织切换，提供邀请码（可设次数与有效期）与入组审批机制。
   - 区分组织所有者、组织管理员与普通成员权限，并配套独立的系统管理端。
-- **开放接口与 AI 集成**
+- **开放接口与扩展能力**
   - 提供 `/open/v1` **OpenAPI**，支持个人 API Key 认证、游标分页与增量同步，便于接入聊天机器人（如 QQ / Discord / 飞书等）或自动化工作流工具。
-  - 后端已接入 **Spring AI MCP Server**（Streamable HTTP `/mcp`），为后续 AI Agent 工作流集成提供基础能力。
 - **现代使用体验**
   - 完整支持浅色/深色模式切换与独立主题色，响应式适配桌面端与移动端，内置基于 Fumadocs 的使用手册。
 
@@ -122,7 +121,7 @@ flowchart LR
 ```mermaid
 flowchart TB
     User["浏览器（桌面 / 移动）"] --> FE["shirohako-frontend<br/>React 19 · TypeScript · Tailwind CSS v4"]
-    Bot["外部脚本 / Bot / AI 客户端"] --> API["shirohako-backend<br/>Spring Boot 3.5 · Java 21<br/>REST API · /open/v1 · /mcp"]
+    Bot["外部脚本 / 机器人"] --> API["shirohako-backend<br/>Spring Boot 3.5 · Java 21<br/>REST API · /open/v1"]
     FE --> API
     API --> DB[("MariaDB 10.11")]
     API --> Cache[("Redis")]
@@ -137,7 +136,7 @@ flowchart TB
 | | 构建与文档 | Vite Plus（`vp`）、pnpm、Fumadocs |
 | **后端** | 框架与语言 | Java 21、Spring Boot 3.5、Spring Security + JWT |
 | | 数据与缓存 | MariaDB 10.11、MyBatis-Plus 3.5、Redis / Redisson、Atlas 迁移 |
-| | 接口与扩展 | Springdoc OpenAPI、Spring AI MCP Server |
+| | 接口文档 | Springdoc OpenAPI |
 | **运维** | 部署与观测 | Docker Compose、Kubernetes（Kustomize）、OpenTelemetry + VictoriaLogs |
 
 ## 仓库结构

@@ -15,7 +15,7 @@ body:
       options:
         - 前端界面 / 交互
         - 后端接口 / 工作流
-        - OpenAPI / MCP 接入
+        - OpenAPI 接入
         - 部署 / 本地开发
         - 文档 / 其他
         - 不确定

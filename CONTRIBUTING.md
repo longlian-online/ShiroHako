@@ -10,7 +10,7 @@
 | --- | --- |
 | 产品建议、跨端 Bug、使用咨询、总览文档与部署说明 | 本仓库 [`longlian-online/ShiroHako`](https://github.com/longlian-online/ShiroHako) |
 | 前端界面、交互、使用手册与客户端代码 PR | [`longlian-online/longlian-oa-frontend`](https://github.com/longlian-online/longlian-oa-frontend) |
-| 后端接口、工作流引擎、数据库迁移、MCP 与服务端代码 PR | [`longlian-online/longlian-oa-backend`](https://github.com/longlian-online/longlian-oa-backend) |
+| 后端接口、工作流引擎、数据库迁移与服务端代码 PR | [`longlian-online/longlian-oa-backend`](https://github.com/longlian-online/longlian-oa-backend) |
 
 如果不确定问题属于前端还是后端，直接在本仓库提交 Issue 即可，维护者会协助分流。
 

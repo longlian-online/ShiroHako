@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 前端源码仓库 (longlian-oa-frontend)
+    url: https://github.com/longlian-online/longlian-oa-frontend
+    about: 仅涉及 Web 前端实现的 Issue 与 PR 可直接前往前端仓库
+  - name: 后端源码仓库 (longlian-oa-backend)
+    url: https://github.com/longlian-online/longlian-oa-backend
+    about: 仅涉及服务端、数据库或部署配置的 Issue 与 PR 可直接前往后端仓库

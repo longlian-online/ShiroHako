@@ -1,0 +1,56 @@
+name: Bug 反馈
+description: 报告使用或部署白箱时遇到的问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈问题！请尽量填写以下信息，帮助我们更快定位原因。
+        > 如果涉及安全漏洞，请勿提交公开 Issue，详见 `SECURITY.md`。
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 问题所属范围
+      options:
+        - 前端界面 / 交互
+        - 后端接口 / 工作流
+        - OpenAPI / MCP 接入
+        - 部署 / 本地开发
+        - 文档 / 其他
+        - 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清晰描述你遇到了什么问题，以及原本期望的行为是什么。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 按步骤说明如何触发该问题。
+      placeholder: |
+        1. 进入 ...
+        2. 点击 ...
+        3. 观察到 ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境与版本信息
+      description: 可填写浏览器、操作系统、部署方式或前后端版本号（如适用）。
+      placeholder: |
+        - 前端版本：
+        - 后端版本：
+        - 浏览器 / 系统：
+        - 部署方式（Docker / K8s / 本地开发）：
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图或日志
+      description: 如有截图、报错响应或控制台日志，请粘贴在这里（注意隐去密钥和敏感信息）。

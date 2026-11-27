@@ -1,8 +1,8 @@
 [submodule "shirohako-frontend"]
 	path = shirohako-frontend
-	url = git@github.com:longlian-online/longlian-oa-frontend
+	url = https://github.com/longlian-online/longlian-oa-frontend.git
 	branch = main
 [submodule "shirohako-backend"]
 	path = shirohako-backend
-	url = git@github.com:longlian-online/longlian-oa-backend
+	url = https://github.com/longlian-online/longlian-oa-backend.git
 	branch = main
